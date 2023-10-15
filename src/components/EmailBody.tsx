@@ -10,44 +10,33 @@ const EmailForm: React.FC = () => {
 
   const handleSendDirect = () => {
     
-    
-    const sendDirect = {
-      prompt: message, // Assuming 'message' is your state variable
-      directify: "True",
-    };
-  
-    axios.post('http://127.0.0.1:8000/items/', sendDirect)
-      .then(response => {
-        // Handle the response, e.g., show a success message to the user
+    axios.post('http://localhost:8000/data', {
+    prompt: message,
+    directify: 'True'
+    })
+    .then(response => {
         console.log(response.data);
-        result = response.data;
-      })
-      .catch(error => {
-        // Handle any errors
-        console.error(error);
-      });
-
+        result = response.data
+    })
+    .catch(error => {
+        console.error('Error with POST request:', error);
+    });
       
   };
 
   const handleSendPolite = () => {
     
-    const sendPolite = {
-      prompt: message, // Assuming 'message' is your state variable
-      directify: "False",
-    };
-  
-    axios.post('http://127.0.0.1:8000/items/', sendPolite)
+    axios.post('http://localhost:8000/data', {
+      prompt: message,
+      directify: 'False'
+      })
       .then(response => {
-        // Handle the response, e.g., show a success message to the user
-        console.log(response.data);
-        result = response.data
+          console.log(response.data);
+          result = response.data
       })
       .catch(error => {
-        // Handle any errors
-        console.error(error);
+          console.error('Error with POST request:', error);
       });
-
       
   };
 
