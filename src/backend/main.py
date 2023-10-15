@@ -5,14 +5,11 @@ from pydantic import BaseModel
 app = FastAPI()
 
 class Item(BaseModel):
-    data: str
+    prompt: str
+    directify: bool
 
 @app.post("/items/")
-def create_item(item: Item):
-    return {"data": item.data}
-    
+async def generate_response(item: Item):
+    model = ChatModel(system="", dir="examples", temperature=0.2)
 
-@app.get("/project/{prompt}/{directify}")
-def read_text(prompt: str, directify: bool):
-    model = ChatModel(system="You are a helpful assistant.", dir="examples", temperature=0.2)
-    return {"": model.say(prompt=prompt, directify=directify=="True", few_shot=False)}
+    return {"response": model.say(prompt=item.prompt, directify=item.directify, few_shot=False)}
