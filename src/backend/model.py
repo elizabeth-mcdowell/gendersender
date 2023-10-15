@@ -9,6 +9,7 @@ class ChatModel:
     def __init__(self, system: str, dir: str, temperature=0.3):
 
         """Sets up the model with a system prompt and a temperature"""
+        openai.api_key = config.api_key
         self.model = openai.ChatCompletion()
         self.system = system
         self.temperature = temperature

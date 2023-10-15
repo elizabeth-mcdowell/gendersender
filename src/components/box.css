@@ -1,0 +1,11 @@
+/* src/Box.css */
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: lightpink;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

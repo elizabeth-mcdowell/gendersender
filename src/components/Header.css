@@ -1,0 +1,21 @@
+/* Your CSS file */
+/* Your CSS file */
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: grey; /* Replace with your desired background color */
+    color: white;
+  }
+  
+.nav-button {
+    background-color: grey;
+    color: white;
+    text-decoration: none;
+    padding: 0px 0px;
+  }
+  
+  .nav-button.active {
+    background-color: pink;
+  }
+  
