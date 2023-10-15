@@ -1,5 +1,5 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
-import './MiniForm.css';
+
 const MiniForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [questions, setQuestions] = useState('');
@@ -14,14 +14,13 @@ const MiniForm: React.FC = () => {
 
   const handleFormSubmit = (e: FormEvent) => {
     e.preventDefault();
-    // Add your logic to handle the form submission, e.g., send the data to a server or perform some action.
-    // You can access 'email' and 'questions' state values here.
-    console.log('Email:', email);
-    console.log('Questions:', questions);
+    // Clear the input fields
+    setEmail('');
+    setQuestions('');
   };
 
   return (
-    <div style={{ width: '100%' }}> {/* Set the width to 100% */}
+    <div style={{ width: '100%' }}>
       <h2>Mini Form</h2>
       <form onSubmit={handleFormSubmit}>
         <div>
