@@ -1,0 +1,11 @@
+polite: |
+    "Hello John!
+    I hope you're day has been going well. I was just wondering if you had a chance to look at the file I sent earlier? If so could you please provide feedback? 
+    Thank you so much!
+    Liz"
+direct: |
+    "Hello John. 
+    I hope your day has been going well. 
+    Please provide feedback for the file sent earlier. 
+    Thank you, 
+    Liz"
