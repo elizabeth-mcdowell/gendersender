@@ -1,27 +1,26 @@
 import React, { useState } from 'react';
-import { Grid, Button, TextField, InputAdornment } from '@mui/material'; // Import the Grid, Button, and InputAdornment components
-import { IconButton } from '@mui/material';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import { Tooltip, Fab, Accordion, AccordionDetails, AccordionSummary, Checkbox, FormControlLabel, FormGroup, Input, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
-import Box from '@mui/material/Box';
-// import Logo from "../assets/artifindlogo.png";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import { Button, Typography, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import NavigationHeader from './Header';
 import MiniForm from './MiniForm';
 
 const QuestionsPage: React.FC = () => {
-    const [forms, setForms] = useState([
-        { id: 1, initialSearch: 'Initial value for Form 1', initialTime: 'Time 1' },
-      ]);
-    const [timeCycle, setTimeCycle] = useState('');
-    return (
-      <div>
-      <MiniForm />
-     <h1 style={{ marginTop: '30px' }}>
-          Commonly Asked Questions
-          </h1>
-      <Accordion>
+  const [forms, setForms] = useState([]);
+  const [timeCycle, setTimeCycle] = useState('');
+  const [isFormVisible, setIsFormVisible] = useState(false); // State to manage the form's visibility
+
+  const handleFormToggle = () => {
+    setIsFormVisible(!isFormVisible); // Toggle the visibility of the form
+  };
+
+  return (
+    <div style={{ width: '100% '}}>
+    
+
+      <h1 style={{ marginTop: '30px' }}>Commonly Asked Questions</h1>
+
+    
+
+<Accordion>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography variant="h6">Why should women change how they email?</Typography>
       </AccordionSummary>
@@ -34,6 +33,7 @@ const QuestionsPage: React.FC = () => {
         </Typography>
       </AccordionDetails>
     </Accordion>
+
     <Accordion>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography variant="h6">How does this tool handle privacy concerns when processing emails?</Typography>
@@ -58,6 +58,7 @@ const QuestionsPage: React.FC = () => {
         </Typography>
       </AccordionDetails>
     </Accordion>
+
     <Accordion>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography variant="h6">Does using this tool affect the way I'm perceived in a professional setting?</Typography>
@@ -69,6 +70,7 @@ const QuestionsPage: React.FC = () => {
         </Typography>
       </AccordionDetails>
     </Accordion>
+
     <Accordion>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography variant="h6">Does the tool work automatically or require manual adjustments for each email?</Typography>
@@ -80,9 +82,32 @@ const QuestionsPage: React.FC = () => {
         </Typography>
       </AccordionDetails>
     </Accordion>
-    </div>
-      );
     
-}
+  
+
+
+
+      {/* Button to toggle the form visibility */}
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={handleFormToggle}
+        style={{ width: '100%' }} // Adjust the width as needed
+>
+  I have a question that wasn't asked!
+</Button>
+
+      {/* Display the form if isFormVisible is true */}
+      {isFormVisible && (
+        <div style={{ width: '100%' }}>
+          {/* Your form component here */}
+          <MiniForm />
+        </div>
+      )}
+    </div>
+
+    
+  );
+};
 
 export default QuestionsPage;

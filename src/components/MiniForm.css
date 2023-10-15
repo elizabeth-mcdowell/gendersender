@@ -1,0 +1,8 @@
+/* MiniForm.css (or any appropriate CSS file) */
+
+.mini-form {
+    width: 100%; /* Set the width to 100% to make it full-width */
+    max-width: 100%; /* Ensure the component doesn't exceed the viewport width */
+    margin: 0 auto; /* Center the component horizontally (optional) */
+  }
+  

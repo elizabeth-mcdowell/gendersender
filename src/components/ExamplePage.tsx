@@ -8,6 +8,7 @@ import sideemail from '../assets/sideemail.png';
 import topemail from '../assets/topemail.png';
 import NavigationHeader from './Header';
 import EmailForm from './EmailBody';
+import Results from './Results';
 
 const ExamplePage: React.FC = () => {
   const [forms, setForms] = useState([
@@ -15,6 +16,25 @@ const ExamplePage: React.FC = () => {
   ]);
   const [timeCycle, setTimeCycle] = useState('');
 
+  const axios = require('axios');
+  var response;
+
+ async function sendItem() {
+    try {
+        const item = {
+            name: "Widget",
+            description: "A fancy widget."
+        };
+
+        response = await axios.post('http://localhost:8000/items/', item);
+
+        console.log(response.data);
+    } catch (error) {
+        console.error("Error making the request:", error);
+    }
+ }
+
+sendItem();
   return (
     <div>
      
@@ -43,10 +63,9 @@ const ExamplePage: React.FC = () => {
 
           <div className="email-form" style={{ width: '100%', height: '500px', border: '1px solid #000000' }}>
               <EmailForm />
+              
           </div>
-          
         </div>
-         
         </div>
       </div>
     </div>

@@ -1,25 +1,80 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const EmailForm: React.FC = () => {
   const [recipient, setRecipient] = useState('');
   const [cc, setCc] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  var result;
 
-  const handleSendEmail = () => {
-    // Logic for sending the email
+  const handleSendDirect = () => {
+    
+    
+    const sendDirect = {
+      prompt: message, // Assuming 'message' is your state variable
+      directify: "True",
+    };
+  
+    axios.post('http://127.0.0.1:8000/items/', sendDirect)
+      .then(response => {
+        // Handle the response, e.g., show a success message to the user
+        console.log(response.data);
+        result = response.data;
+      })
+      .catch(error => {
+        // Handle any errors
+        console.error(error);
+      });
+
+      
+  };
+
+  const handleSendPolite = () => {
+    
+    const sendPolite = {
+      prompt: message, // Assuming 'message' is your state variable
+      directify: "False",
+    };
+  
+    axios.post('http://127.0.0.1:8000/items/', sendPolite)
+      .then(response => {
+        // Handle the response, e.g., show a success message to the user
+        console.log(response.data);
+        result = response.data
+      })
+      .catch(error => {
+        // Handle any errors
+        console.error(error);
+      });
+
+      
   };
 
   return (
     <div style={{ height: '66vh', display: 'flex', flexDirection: 'column' }}>
-      <h1>Send an Email</h1>
+      
       <form style={{ flex: 1 }}>
+
         <button 
           type="button"
-          onClick={handleSendEmail}
           style={{ backgroundColor: 'lightcoral', color: 'white', margin: "5px"}}
         >
           Send Email
+        </button>
+        <button 
+          type="button"
+          onClick={handleSendPolite}
+          style={{ backgroundColor: 'lightcoral', color: 'white', margin: "5px"}}
+        >
+          Make Polite
+        </button>
+        <button 
+          type="button"
+          onClick={handleSendDirect}
+          style={{ backgroundColor: 'lightcoral', color: 'white', margin: "5px"}}
+        >
+          Make Direct
         </button>
         <div>
           <label>To:</label>
@@ -53,6 +108,11 @@ const EmailForm: React.FC = () => {
             onChange={(e) => setMessage(e.target.value)}
           />
         </div>
+        <input
+        type="text"
+        value={result}
+        readOnly // This attribute makes the input read-only
+    />
       </form>
     </div>
   );

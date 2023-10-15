@@ -1,5 +1,5 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
-
+import './MiniForm.css';
 const MiniForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [questions, setQuestions] = useState('');
@@ -21,7 +21,7 @@ const MiniForm: React.FC = () => {
   };
 
   return (
-    <div>
+    <div style={{ width: '100%' }}> {/* Set the width to 100% */}
       <h2>Mini Form</h2>
       <form onSubmit={handleFormSubmit}>
         <div>
