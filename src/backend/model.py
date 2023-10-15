@@ -41,7 +41,7 @@ class ChatModel:
                 self.messages.append({"role": "user", "content": f"Can you make the following message more {after}? {data[before]}"})
                 self.messages.append({"role": "assistant", "content": f"{data[after]}"})
 
-    def say(self, prompt: str, directify: bool, few_shot: True):
+    def say(self, prompt: str, directify: bool, few_shot: True) -> str:
         
         """Prompts the model for a response. This adds the last user prompt to the messages and prompts the model."""
 
