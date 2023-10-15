@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, createContext} from 'react';
 import axios from 'axios';
+
+const ResultContext = React.createContext("blah");
 
 const EmailForm: React.FC = () => {
   const [recipient, setRecipient] = useState('');
   const [cc, setCc] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  var result;
+  const [result, setResult] = useState("");
 
   const handleSendDirect = () => {
     
@@ -16,7 +18,8 @@ const EmailForm: React.FC = () => {
     })
     .then(response => {
         console.log(response.data);
-        result = response.data
+        setResult(response.data.response);
+
     })
     .catch(error => {
         console.error('Error with POST request:', error);
@@ -32,7 +35,7 @@ const EmailForm: React.FC = () => {
       })
       .then(response => {
           console.log(response.data);
-          result = response.data
+          setResult(response.data.response);
       })
       .catch(error => {
           console.error('Error with POST request:', error);
@@ -100,7 +103,6 @@ const EmailForm: React.FC = () => {
         <input
         type="text"
         value={result}
-        readOnly // This attribute makes the input read-only
     />
       </form>
     </div>
