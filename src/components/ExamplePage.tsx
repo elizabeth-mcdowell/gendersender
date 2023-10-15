@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { Grid } from '@mui/material';
+import { Grid, Button, TextField, InputAdornment } from '@mui/material'; // Import the Grid, Button, and InputAdornment components
+import { IconButton } from '@mui/material';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { Tooltip, Fab, Accordion, AccordionDetails, AccordionSummary, Checkbox, FormControlLabel, FormGroup, Input, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import Box from '@mui/material/Box';
 import sideemail from '../assets/sideemail.png';
 import topemail from '../assets/topemail.png';
 import NavigationHeader from './Header';
-import EmailBody from './EmailBody';
+import EmailForm from './EmailBody';
 
 const ExamplePage: React.FC = () => {
   const [forms, setForms] = useState([
@@ -14,10 +17,7 @@ const ExamplePage: React.FC = () => {
 
   return (
     <div>
-      <NavigationHeader />
-      <div className="Logo" style={{ display: 'flex', justifyContent: 'left', margin: '20px' }}>
-        <p>"Home Page"</p>
-      </div>
+     
       <div className="container" style={{ display: 'flex', alignItems: 'flex-start', margin: '50px' }}>
         <div className="box1">
           <Box
@@ -28,8 +28,9 @@ const ExamplePage: React.FC = () => {
             alt="TopImage"
             src={topemail}
           />
-        </div>
-        <div className="box2" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+        
+        <div className="box2-and-email" style={{ display: 'flex'}}>
+          <div className="box2" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
           <Box
             component="img"
             sx={{
@@ -38,7 +39,14 @@ const ExamplePage: React.FC = () => {
             alt="SideImage"
             src={sideemail}
           />
-          <EmailBody />
+          </div>
+
+          <div className="email-form" style={{ width: '100%', height: '500px', border: '1px solid #000000' }}>
+              <EmailForm />
+          </div>
+          
+        </div>
+         
         </div>
       </div>
     </div>

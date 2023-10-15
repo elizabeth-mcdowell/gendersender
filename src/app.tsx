@@ -6,12 +6,13 @@ import HomePage from './components/HomePage';
 import ExamplePage from './components/ExamplePage';
 import QuestionsPage from './components/QuestionsPage';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import NavigationHeader from './components/Header';
 //import Box from './components/Box';
 
 function app() {
   return (
     <Router>
-  
+       <NavigationHeader />
         <Routes>
           <Route path="/WhyPage" element={<WhyPage />} />
           <Route path="/AboutUsPage" element={<AboutUsPage />} />

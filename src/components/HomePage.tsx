@@ -23,15 +23,14 @@ const HomePage: React.FC = () => {
     <div>
       <div className="Logo" style={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
       </div>
-      <h1 style={{ marginTop: '70px' }}>
-          Home Page
+    
+      <h1> Our Tech Stack
           </h1>
       <div>
-        <NavigationHeader />
-        <h2>Our Tech Stack</h2>
+        
         <div className="tech-stack">
           <p>
-            We built out backend in Python, and our languag system is powered by GPT 3.5 Turbo, connected to our application through the OpenAI API. Our backend is constructed like a ChatModel and is easily usable through simple prompting. We also provide the option to perform few shot prompting given a specified directory containing appropriated formatted yaml files.
+            We built out backend in Python, and our language system is powered by GPT 3.5 Turbo, connected to our application through the OpenAI API. Our backend is constructed like a ChatModel and is easily usable through simple prompting. We also provide the option to perform few shot prompting given a specified directory containing appropriated formatted yaml files. We connect our backend to our frontend using FastAPI. 
           </p>
           <p>
             Our frontend is built with React with Typescript, HTML, CSS and pictures. All of our webpages are written in tsk files with their own individual CSS pages for styling. We have a header across all five pages to allow for easy navigation, and provide an interactive window in the Edit page to allow users to try out our application.
@@ -39,7 +38,7 @@ const HomePage: React.FC = () => {
         </div>
         <div className="contribution">
           <p>
-            Luisa: I built the backend of our project. This consisted of the prompt engineering, doing few shot prompting with the OpenAI API, and writing the ChatModel class to encapsulate all the backend functionalities of our code. 
+            Luisa: I built the backend of our project. This consisted of the prompt engineering, doing few shot prompting with the OpenAI API, connecting to the frontend using FastAPI, and writing the ChatModel class to encapsulate all the backend functionalities of our code. 
           </p>
           <p>
           Raisa + Liz: We worked on the front end of the project, we planned out the UI of the site, planning out the different pages and styling everything to make it legible for our users. 

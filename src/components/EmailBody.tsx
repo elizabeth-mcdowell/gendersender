@@ -14,16 +14,16 @@ const EmailForm: React.FC = () => {
     <div style={{ height: '66vh', display: 'flex', flexDirection: 'column' }}>
       <h1>Send an Email</h1>
       <form style={{ flex: 1 }}>
-        <button
+        <button 
           type="button"
           onClick={handleSendEmail}
-          style={{ backgroundColor: 'lightcoral', color: 'white' }}
+          style={{ backgroundColor: 'lightcoral', color: 'white', margin: "5px"}}
         >
           Send Email
         </button>
         <div>
           <label>To:</label>
-          <input
+          <input style={{margin:"5px", width: "95%"}}
             type="text"
             value={recipient}
             onChange={(e) => setRecipient(e.target.value)}
@@ -31,7 +31,7 @@ const EmailForm: React.FC = () => {
         </div>
         <div>
           <label>CC:</label>
-          <input
+          <input style={{margin:"5px", width: "95%"}}
             type="text"
             value={cc}
             onChange={(e) => setCc(e.target.value)}
@@ -39,7 +39,7 @@ const EmailForm: React.FC = () => {
         </div>
         <div>
          
-          <input
+          <input style={{margin:"5px", width: "98%"}}
             type="text"
             placeholder="Add a subject"
             value={subject}
@@ -47,8 +47,7 @@ const EmailForm: React.FC = () => {
           />
         </div>
         <div>
-          
-          <textarea
+          <textarea style={{margin:"5px", width: "98%", height: "200px"}}
             placeholder="Type / to insert files and more"
             value={message}
             onChange={(e) => setMessage(e.target.value)}

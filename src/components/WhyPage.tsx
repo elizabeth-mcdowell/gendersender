@@ -15,13 +15,9 @@ const WhyPage: React.FC = () => {
     const [timeCycle, setTimeCycle] = useState('');
     return (
         <div>
-          <NavigationHeader />
-          <div className="Logo" style={{ display: 'flex', justifyContent: 'center',  margin: '20px' }}>
-            <a href="http://localhost:3000">
-              <p>Let's go back home...take me home</p>
-            </a>
-          </div>
-          <h2>Why Are We Doing This?</h2>
+          <h1 style={{ marginTop: '20px' }}>
+            Why are we doing this?
+          </h1>
           <div className="Explanation">
             <p>Let's face it...writing emails is hard. Sometimes you have to write three different drafts of an email 
               before accepting that there's nothing else you can possibly do and you just send it. The worst part is, Sometimes

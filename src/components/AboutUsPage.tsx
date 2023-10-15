@@ -8,6 +8,9 @@ import Box from '@mui/material/Box';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { useNavigate } from 'react-router-dom';
 import NavigationHeader from './Header';
+import RaisaImage from '../assets/raisa.png';
+import LuisaImage from '../assets/luisa.png';
+import LizImage from '../assets/liz.png';
 const AboutUsPage: React.FC = () => {
     const [forms, setForms] = useState([
         { id: 1, initialSearch: 'Initial value for Form 1', initialTime: 'Time 1' },
@@ -19,12 +22,13 @@ const AboutUsPage: React.FC = () => {
       };
     return (
       <div>
-        <NavigationHeader /><>
-        <h1 style={{ marginTop: '70px' }}>
+      <>
+        <h1 style={{ marginTop: '20px' }}>
           Meet the Programmers
           </h1>
       <Grid container spacing={3}> 
         <Grid item xs={12} sm={6} md={4}>
+        <img src={RaisaImage} alt="Raisa" style={{ width: '200px', height: '200px' }} />
           <Paper elevation={3}>
             <Typography variant="h5">Raisa</Typography>
             <Typography>
@@ -35,6 +39,7 @@ const AboutUsPage: React.FC = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <Paper elevation={3}>
+          <img src={LuisaImage} alt="Luisa" style={{ width: '200px', height: '200px' }} />
             <Typography variant="h5">Luisa</Typography>
             <Typography>
               Luisa is a 2nd year Computer Science and Math major currently working on bullying/prompting
@@ -44,6 +49,7 @@ const AboutUsPage: React.FC = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <Paper elevation={3}>
+          <img src={LizImage} alt="Liz" style={{ width: '200px', height: '200px' }} />
             <Typography variant="h5">Liz</Typography>
             <Typography>
               Liz is a 3rd year Computer Science Major with a minor in Theatre and is very into making sure

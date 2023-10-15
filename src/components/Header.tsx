@@ -1,48 +1,55 @@
-import React, { useState } from 'react';
-import { Grid } from '@mui/material';
-import Box from '@mui/material/Box';
-import sideemail from '../assets/sideemail.png';
-import topemail from '../assets/topemail.png';
-import NavigationHeader from './Header';
-import EmailBody from './EmailBody';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
+import Toolbar from '@mui/material/Toolbar';
+import AppBar from '@mui/material/AppBar';
 
-const ExamplePage: React.FC = () => {
-  const [forms, setForms] = useState([
-    { id: 1, initialSearch: 'Initial value for Form 1', initialTime: 'Time 1' },
-  ]);
-  const [timeCycle, setTimeCycle] = useState('');
-
+const NavigationHeader: React.FC = () => {
   return (
-    <div>
-      <NavigationHeader />
-      <div className="Logo" style={{ display: 'flex', justifyContent: 'left', margin: '20px' }}>
-        <p>"Home Page"</p>
-      </div>
-      <div className="container" style={{ display: 'flex', alignItems: 'flex-start', margin: '50px' }}>
-        <div className="box1">
-          <Box
-            component="img"
-            sx={{
-              height: 100,
-            }}
-            alt="TopImage"
-            src={topemail}
-          />
-        </div>
-        <div className="box2" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-          <Box
-            component="img"
-            sx={{
-              height: 500,
-            }}
-            alt="SideImage"
-            src={sideemail}
-          />
-          <EmailBody />
-        </div>
-      </div>
-    </div>
+    //header
+    <AppBar position="static" style={{backgroundColor: "pink"}}>
+      <Toolbar>
+        <Grid container spacing={2} justifyContent="space-around">
+          <Grid item>
+            <Link to="/">
+              <Button variant="contained" style={{backgroundColor: "grey"}}>
+                Home
+              </Button>
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link to="/ExamplePage">
+              <Button variant="contained" style={{backgroundColor: "grey"}}>
+                Project
+              </Button>
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link to="/AboutUsPage">
+              <Button variant="contained" style={{backgroundColor: "grey"}}>
+                About Us
+              </Button>
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link to="/WhyPage">
+              <Button variant="contained" style={{backgroundColor: "grey"}}>
+                Why
+              </Button>
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link to="/QuestionsPage">
+              <Button variant="contained" style={{backgroundColor: "grey"}}>
+                Questions
+              </Button>
+            </Link>
+          </Grid>
+        </Grid>
+      </Toolbar>
+    </AppBar>
   );
 };
 
-export default ExamplePage;
+export default NavigationHeader;
