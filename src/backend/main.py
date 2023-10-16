@@ -24,6 +24,8 @@ app.add_middleware(
 @app.post("/data")
 async def generate_response(data: Item):
 
+    print("we made it !!!!")
+
     if data.directify == "True":
         dire = True
     else:
