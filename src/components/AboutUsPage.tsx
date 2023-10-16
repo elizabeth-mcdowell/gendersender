@@ -21,6 +21,7 @@ import eImage from '../assets/e.png';
 import bestiesImage from '../assets/besties.png';
 import staffImage from '../assets/staff.png';
 import teamImage from '../assets/team.png';
+import clutter from '../assets/clutter.png';
 const AboutUsPage: React.FC = () => {
     const [forms, setForms] = useState([
         { id: 1, initialSearch: 'Initial value for Form 1', initialTime: 'Time 1' },
@@ -31,7 +32,7 @@ const AboutUsPage: React.FC = () => {
         navigate(path); // Use the navigate function to go to the specified path
       };
     return (
-      <div>
+      <div style={{margin: "40px"}}>
       <>
         <h1 style={{ marginTop: '20px' }}>
           Meet the Programmers
@@ -42,8 +43,8 @@ const AboutUsPage: React.FC = () => {
           <Paper elevation={3}>
             <Typography variant="h5">Raisa</Typography>
             <Typography>
-              Raisa is a 3rd year Computer Science and Math major passionate about equality in STEM.
-              She is currently on Co-op at TJX where she sometimes struggles to write the perfect email
+              Raisa is a 3rd year Computer Science and Math major passionate about equality in STEM and making tech accessible for all.
+              She is currently on Co-op at TJX where she struggles to write the perfect email
             </Typography>
           </Paper>
         </Grid>
@@ -114,6 +115,10 @@ const AboutUsPage: React.FC = () => {
   <figure style={{ flex: '0 0 calc(40% - 20px)', margin: '10px' }}>
     <img src={teamImage} alt="other team" style={{ width: '100%', height: 'auto' }} />
     <figcaption>Talking to some of the other teams who are coming by!</figcaption>
+  </figure>
+  <figure style={{ flex: '0 0 calc(40% - 20px)', margin: '10px' }}>
+    <img src={clutter} alt="clutter" style={{ width: '100%', height: 'auto' }} />
+    <figcaption>The work space DOES NOT reflect the code :)</figcaption>
   </figure>
 </div>
 

@@ -19,7 +19,7 @@ const QuestionsPage: React.FC = () => {
   };
 
   return (
-    <div style={{ width: '100% '}}>
+    <div style={{ width: '100% ', border: '1px solid #000000', padding: "20px", marginTop: "30px"}}>
     
 
       <h1 style={{ marginTop: '30px' }}>Commonly Asked Questions</h1>
@@ -100,22 +100,23 @@ const QuestionsPage: React.FC = () => {
       {isFormVisible && (
         <div style={{ width: '100%' }}>
           <div>
-            <label htmlFor="email">Email:</label>
-            <input
+            <label htmlFor="email" style={{margin: "10px"}}>Email:</label>
+            <input 
               type="email"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              style={{ width: '100%' }}
+              style={{ width: '100%'}}
             />
           </div>
           <div>
-            <label htmlFor="questions">Questions:</label>
+            <label htmlFor="questions" style={{margin: "10px"}}>Questions:</label>
             <textarea
               id="questions"
               value={questions}
               onChange={(e) => setQuestions(e.target.value)}
-              style={{ width: '100%' }}
+              style={{ width: '100%'}}
+
             />
           </div>
           <div>

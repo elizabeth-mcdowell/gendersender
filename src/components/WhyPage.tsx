@@ -14,7 +14,7 @@ const WhyPage: React.FC = () => {
       ]);
     const [timeCycle, setTimeCycle] = useState('');
     return (
-        <div>
+        <div style={{margin: "40px", border: '1px solid #000000', padding: "20px"}}>
           <h1 style={{ marginTop: '20px' }}>
             Why are we doing this?
           </h1>
