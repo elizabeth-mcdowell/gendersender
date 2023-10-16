@@ -69,16 +69,16 @@ const EmailForm: React.FC = () => {
           Make Direct
         </button>
         <div>
-          <label>To:</label>
-          <input style={{margin:"5px", width: "95%"}}
+          <label style={{margin:"12px"}}>To:</label>
+          <input style={{margin:"5px", width: "90%"}}
             type="text"
             value={recipient}
             onChange={(e) => setRecipient(e.target.value)}
           />
         </div>
         <div>
-          <label>CC:</label>
-          <input style={{margin:"5px", width: "95%"}}
+          <label style={{margin:"12px"}}>CC:</label>
+          <input style={{margin:"5px", width: "90%"}}
             type="text"
             value={cc}
             onChange={(e) => setCc(e.target.value)}
@@ -93,17 +93,17 @@ const EmailForm: React.FC = () => {
             onChange={(e) => setSubject(e.target.value)}
           />
         </div>
+        <div className="text" style={{display: 'flex'}}>
         <div>
-          <textarea style={{margin:"5px", width: "98%", height: "200px"}}
+          <textarea style={{margin:"5px", width: "400px", height: "200px"}}
             placeholder="Type / to insert files and more"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
         </div>
-        <input
-        type="text"
-        value={result}
-    />
+        <textarea style={{margin: "5px", display: 'flex', width:"400px", height: "200px"}}
+        value={result} />
+        </div>
       </form>
     </div>
   );

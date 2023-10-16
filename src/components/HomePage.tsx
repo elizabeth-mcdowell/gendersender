@@ -20,10 +20,17 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div>
+    <div style={{margin: "40px", border: '1px solid #000000', padding: "20px"}}>
       <div className="Logo" style={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
       </div>
-    
+      
+      <h1>
+        Our Project
+      </h1>
+      <p>
+        Our project is creating a piece of software that will analyze text written for an email. From there, we can either make the 
+        email <b>"more direct"</b> or <b>"more polite"</b>. The three of us noticed that gendered difference in emails can often lead to a difference in how people perceive the sender, particularly if the sender is a woman. Using a more polite and friendly tone can lead to the sender being perceived as less confident whereas taking a more direct and authoritative tone can lead to the sender being perceived as bossy and brash. Our goal is to help email writers find <b>the right tone</b>, whatever that tone may be--whether it is more friendly/approachable or more straightforward. 
+      </p>
       <h1> Our Tech Stack
           </h1>
       <div>
@@ -41,7 +48,7 @@ const HomePage: React.FC = () => {
             Luisa: I built the backend of our project. This consisted of the prompt engineering, doing few shot prompting with the OpenAI API, connecting to the frontend using FastAPI, and writing the ChatModel class to encapsulate all the backend functionalities of our code. 
           </p>
           <p>
-          Raisa + Liz: We worked on the front end of the project, we planned out the UI of the site, planning out the different pages and styling everything to make it legible for our users. 
+          Raisa + Liz: We worked on the front end of the project, we planned out the UI of the site, planning out the different pages and styling everything to make it legible for our users. We worked with Luisa to connect the backend to the frontend so that the user can have a good experience using this application. 
             </p>
         </div>
       </div>

@@ -6,14 +6,20 @@ import MiniForm from './MiniForm';
 const QuestionsPage: React.FC = () => {
   const [forms, setForms] = useState([]);
   const [timeCycle, setTimeCycle] = useState('');
-  const [isFormVisible, setIsFormVisible] = useState(false); // State to manage the form's visibility
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [email, setEmail] = useState('');
+  const [questions, setQuestions] = useState('');
 
-  const handleFormToggle = () => {
-    setIsFormVisible(!isFormVisible); // Toggle the visibility of the form
+  const handleFormSubmit = () => {
+    // Handle form submission logic here if needed.
+    // Clear input fields and hide the form.
+    setEmail('');
+    setQuestions('');
+    setIsFormVisible(false);
   };
 
   return (
-    <div style={{ width: '100% '}}>
+    <div style={{ width: '100% ', border: '1px solid #000000', padding: "20px", marginTop: "30px"}}>
     
 
       <h1 style={{ marginTop: '30px' }}>Commonly Asked Questions</h1>
@@ -82,26 +88,41 @@ const QuestionsPage: React.FC = () => {
         </Typography>
       </AccordionDetails>
     </Accordion>
-    
-  
-
-
-
-      {/* Button to toggle the form visibility */}
-      <Button
+    <Button
         variant="contained"
         color="primary"
-        onClick={handleFormToggle}
-        style={{ width: '100%' }} // Adjust the width as needed
->
-  I have a question that wasn't asked!
-</Button>
+        onClick={() => setIsFormVisible(!isFormVisible)}
+        style={{ width: '100%' }}
+      >
+        I have a question that wasn't asked!
+      </Button>
 
-      {/* Display the form if isFormVisible is true */}
       {isFormVisible && (
         <div style={{ width: '100%' }}>
-          {/* Your form component here */}
-          <MiniForm />
+          <div>
+            <label htmlFor="email" style={{margin: "10px"}}>Email:</label>
+            <input 
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              style={{ width: '100%'}}
+            />
+          </div>
+          <div>
+            <label htmlFor="questions" style={{margin: "10px"}}>Questions:</label>
+            <textarea
+              id="questions"
+              value={questions}
+              onChange={(e) => setQuestions(e.target.value)}
+              style={{ width: '100%'}}
+            />
+          </div>
+          <div>
+            <button type="submit" onClick={handleFormSubmit}>
+              Submit
+            </button>
+          </div>
         </div>
       )}
     </div>
