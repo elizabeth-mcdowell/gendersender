@@ -12,3 +12,5 @@ To run the backend:
 4. Run  `uvicorn main:app --reload`, you will know when the backend is running when you see `Application startup complete` in the terminal.
 
 To run the frontend:
+
+(to be completed)
