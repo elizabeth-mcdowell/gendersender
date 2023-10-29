@@ -13,4 +13,11 @@ To run the backend:
 
 To run the frontend:
 
-(to be completed)
+1. Download the appropriate Node.js installer for laptop using https://nodejs.org/en/download/ 
+2. Follow the directions to install npm on your laptop 
+3. Install React: `npm install -g create-react-app`
+4. Install axios: `npm install axios`
+5. Install @mui/material: `npm install @mui/material`
+6. Install @mui/icons-material: `npm install @mui/icons-material`
+7. Install react-router-dom: `react-router-dom`
+8. Run `npm start` to start up the project, you will know when the frontend is running when a browser opens up for you adn you can se the website.
